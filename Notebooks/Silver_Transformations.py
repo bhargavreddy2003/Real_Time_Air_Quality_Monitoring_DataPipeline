@@ -166,7 +166,7 @@ def silver_AirQuality():
 dlt.apply_changes(
     target="silver_airquality",
     source="bronze_airquality",
-    keys=["id"],  # Replace with your unique keys like 'idx' or 'AirQualityKey'
-    sequence_by=col("Modified_Date"),  # Replace with your timestamp column
-    stored_as_scd_type = 1  # For Type 2 SCD
+    keys=["idx"],  
+    sequence_by=col("Modified_Date"),  
+    stored_as_scd_type = 1  
 )
