@@ -67,16 +67,16 @@ if __name__ == "__main__":
                     if data.get("status") == "ok":
                         data["city_name"] = city
                         send_json_data(producer, KAFKA_TOPIC, data)
-                        print(f"✅ Sent: {city}")
+                        print(f" Sent: {city}")
                     else:
-                        print(f"⚠️ Skipped (no data): {city}")
+                        print(f"⚠ Skipped (no data): {city}")
                 else:
-                    print(f"❌ Error {resp.status_code} for {city}")
+                    print(f" Error {resp.status_code} for {city}")
             except Exception as e:
-                print(f"🚨 Exception for {city}: {e}")
+                print(f" Exception for {city}: {e}")
             time.sleep(10)  # Avoid API rate limits
 
-        print("\n🔁 Completed one full city cycle. Restarting...\n")
+        print("\n Completed one full city cycle. Restarting...\n")
 
 
 
@@ -88,3 +88,4 @@ if __name__ == "__main__":
 
 
     
+
