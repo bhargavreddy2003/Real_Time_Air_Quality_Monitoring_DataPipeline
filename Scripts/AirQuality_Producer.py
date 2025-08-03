@@ -48,7 +48,7 @@ def send_json_data(producer, topic, data):
     """Send JSON data to Kafka topic"""
     try:
         future = producer.send(topic, value=data)
-        # Wait for message to be delivered
+      
         future.get(timeout=10)
         print(f"Successfully sent data to {topic}")
     except Exception as e:
@@ -74,7 +74,7 @@ if __name__ == "__main__":
                     print(f" Error {resp.status_code} for {city}")
             except Exception as e:
                 print(f" Exception for {city}: {e}")
-            time.sleep(10)  # Avoid API rate limits
+            time.sleep(10) 
 
         print("\n Completed one full city cycle. Restarting...\n")
 
