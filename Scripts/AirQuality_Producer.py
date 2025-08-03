@@ -69,7 +69,7 @@ if __name__ == "__main__":
                         send_json_data(producer, KAFKA_TOPIC, data)
                         print(f" Sent: {city}")
                     else:
-                        print(f"⚠ Skipped (no data): {city}")
+                        print(f" Skipped (no data): {city}")
                 else:
                     print(f" Error {resp.status_code} for {city}")
             except Exception as e:
